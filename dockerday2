@@ -33,5 +33,121 @@
    33  history
 
 
+# 🐳 **Docker Installation & Basic Commands – Practice Guide**
 
+This guide covers **Docker installation and basic commands on Linux**, including container management, image handling, and **Nginx testing**.
+
+---
+
+## **1. Install Docker**
+
+```bash
+curl -fsSL https://get.docker.com -o install-docker.sh
+Explanation:
+Downloads the official Docker installation script and saves it as install-docker.sh.
+
+ls
+Explanation:
+Verifies that install-docker.sh is downloaded.
+
+sh install-docker.sh
+Explanation:
+Installs Docker Engine on the system.
+
+2. Verify Docker Installation
+docker --version
+Explanation:
+Confirms Docker installation and shows version.
+
+3. Container Management
+docker ps
+Explanation: Shows running containers only.
+
+docker ps -a
+Explanation: Shows all containers (running + stopped).
+
+4. Image Management
+docker images
+Explanation:
+Lists all locally available Docker images.
+
+5. Run Test Container
+docker run hello-world
+Explanation:
+Validates Docker installation.
+
+6. Run Ubuntu Container (Interactive)
+docker run -it ubuntu
+Explanation:
+Starts Ubuntu in interactive mode.
+
+7. Start Existing Container
+docker start <container_id>
+Example:
+
+docker start 8aafca4a6f92
+Explanation:
+Starts a stopped container.
+
+8. Access Container Terminal
+docker exec -it <container_id> /bin/bash
+Example:
+
+docker exec -it 8aafca4a6f92 /bin/bash
+Explanation:
+Opens terminal inside a running container.
+
+9. Create Image from Container
+docker commit <container_id> <new_image_name>
+Example:
+
+docker commit 8aafca4a6f92 anuragiswrongimage
+Explanation:
+Creates a new image from container state.
+
+10. Pull Nginx Image
+docker pull nginx
+Explanation:
+Downloads the official Nginx image.
+
+11. Run Nginx Container
+docker run nginx
+Explanation:
+Runs Nginx without external access.
+
+12. Run Nginx with Port Mapping
+docker run -p 80:80 nginx
+Explanation:
+Maps container port 80 to host 80.
+
+13. Run Nginx in Background with Name
+docker run --name docker-nginx -d -p 80:80 nginx
+Explanation:
+
+--name → Container name
+
+-d → Detached mode
+
+-p 80:80 → Port mapping
+
+14. Common Mistake
+❌ Wrong
+
+docker run --name -d docker-nginx -p 80:80 nginx
+✅ Correct
+
+docker run --name docker-nginx -d -p 80:80 nginx
+Reason:
+--name must be followed by the container name.
+
+15. Command History
+history
+Explanation:
+Shows previously executed commands.
+
+🎯 Practice Tip
+After running Nginx with port mapping, open your browser:
+
+http://localhost
+If you see the Nginx Welcome Page, Docker networking is working perfectly! 🚀
 
