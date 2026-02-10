@@ -1,0 +1,23 @@
+ 1  curl -fsSL https://get.docker.com -o install-docker.sh
+    2  sudo sh install-docker.sh
+    3  docker ps
+    4  docker -v
+    5  vi Dockerfile
+
+FROM ubuntu
+MAINTAINER clouddevopshub@gmail.com
+RUN apt-get update
+RUN apt-get install nginx -y
+CMD ["echo","Image created"]
+
+      
+    6  cat Dockerfile 
+    7  docker images
+    8  docker build -t shilpa42 .
+    9  docker images
+   10  docker login
+   11  docker images
+   12  docker tag 5e92a79a891c vikas4cloud/shilpa42:latest
+   13  docker images
+   14  docker push vikas4cloud/shilpa42:latest
+   15  history
