@@ -1,0 +1,38 @@
+501  gcloud container clusters get-credentials jagdish --region asia-east1 --project march22paid
+  502  kubectl cluster-info
+  503  kubectl config get-contexts
+  504  kubectl get ns
+  505  kubectl create ns jio-dev
+  506  kubectl get ns
+  507  mkdir batch-42
+  508  cd batch-42
+  509  ls
+  510  vi nsqa.yaml
+
+
+--- 
+apiVersion: v1
+kind: Namespace
+metadata: 
+  name: jio-qa
+
+
+
+  511  cat nsqa.yaml 
+  512  kubectl create  -f nsqa.yaml
+  513  kubectl get ns
+  514  kubectl run nginx  --image=nginx:1.16
+  515  kubectl get pods
+  516  kubectl get po
+  517  kubectl get no
+  518  kubectl get nodes
+  519  kubectl get svc
+  520  kubectl run jenkins  --image=jenkins/jenkins:lts
+  521  kubectl get no
+  522  kubectl get po
+  523  kubectl get svc
+  524  kubectl get svc -w
+  525  kubectl get po
+  526  kubectl get no
+  527  kubectl get po -o wide
+  528  history
